@@ -285,58 +285,67 @@
           </div>
         </div>
 
-        <div class="teacher-form">
-          <label class="teacher-field teacher-field--full">
-            <span>Enunciado</span>
-            <textarea id="teacher-prompt" rows="4" placeholder="Digite a pergunta"></textarea>
-          </label>
+        <div class="teacher-layout">
+          <section class="teacher-panel teacher-panel--editor" aria-labelledby="teacher-editor-title">
+            <h3 id="teacher-editor-title" class="teacher-section-title">Nova pergunta</h3>
 
-          <label class="teacher-field">
-            <span>Alternativa a)</span>
-            <input id="teacher-option-a" type="text" placeholder="Primeira alternativa">
-          </label>
+            <div class="teacher-form">
+              <label class="teacher-field teacher-field--full">
+                <span>Enunciado</span>
+                <textarea id="teacher-prompt" rows="4" placeholder="Digite a pergunta"></textarea>
+              </label>
 
-          <label class="teacher-field">
-            <span>Alternativa b)</span>
-            <input id="teacher-option-b" type="text" placeholder="Segunda alternativa">
-          </label>
+              <label class="teacher-field">
+                <span>Alternativa a)</span>
+                <input id="teacher-option-a" type="text" placeholder="Primeira alternativa">
+              </label>
 
-          <label class="teacher-field">
-            <span>Alternativa c)</span>
-            <input id="teacher-option-c" type="text" placeholder="Terceira alternativa">
-          </label>
+              <label class="teacher-field">
+                <span>Alternativa b)</span>
+                <input id="teacher-option-b" type="text" placeholder="Segunda alternativa">
+              </label>
 
-          <label class="teacher-field">
-            <span>Alternativa d)</span>
-            <input id="teacher-option-d" type="text" placeholder="Quarta alternativa">
-          </label>
+              <label class="teacher-field">
+                <span>Alternativa c)</span>
+                <input id="teacher-option-c" type="text" placeholder="Terceira alternativa">
+              </label>
 
-          <label class="teacher-field">
-            <span>Resposta correta</span>
-            <select id="teacher-answer">
-              <option value="0">a)</option>
-              <option value="1">b)</option>
-              <option value="2">c)</option>
-              <option value="3">d)</option>
-            </select>
-          </label>
+              <label class="teacher-field">
+                <span>Alternativa d)</span>
+                <input id="teacher-option-d" type="text" placeholder="Quarta alternativa">
+              </label>
 
-          <label class="teacher-field teacher-field--full">
-            <span>Explicação</span>
-            <textarea id="teacher-explanation" rows="3" placeholder="Explique por que a resposta está certa"></textarea>
-          </label>
+              <label class="teacher-field">
+                <span>Resposta correta</span>
+                <select id="teacher-answer">
+                  <option value="0">a)</option>
+                  <option value="1">b)</option>
+                  <option value="2">c)</option>
+                  <option value="3">d)</option>
+                </select>
+              </label>
+
+              <label class="teacher-field teacher-field--full">
+                <span>Explicação</span>
+                <textarea id="teacher-explanation" rows="3" placeholder="Explique por que a resposta está certa"></textarea>
+              </label>
+            </div>
+
+            <div class="teacher-actions">
+              <button id="teacher-add-button" class="menu-button menu-button--compact" type="button">Adicionar Pergunta</button>
+            </div>
+
+            <p id="teacher-status" class="teacher-status" aria-live="polite"></p>
+          </section>
+
+          <section class="teacher-panel teacher-panel--bank teacher-bank" aria-labelledby="teacher-bank-title">
+            <div class="teacher-bank__header">
+              <h3 id="teacher-bank-title">Questões personalizadas</h3>
+              <p class="teacher-bank__note">As perguntas cadastradas entram na próxima nova partida.</p>
+            </div>
+            <div id="teacher-custom-list" class="teacher-custom-list"></div>
+          </section>
         </div>
-
-        <div class="teacher-actions">
-          <button id="teacher-add-button" class="menu-button menu-button--compact" type="button">Adicionar Pergunta</button>
-        </div>
-
-        <p id="teacher-status" class="teacher-status" aria-live="polite"></p>
-
-        <section class="teacher-bank">
-          <h3>Questões personalizadas</h3>
-          <div id="teacher-custom-list" class="teacher-custom-list"></div>
-        </section>
       </div>
     </div>
 
@@ -344,5 +353,6 @@
   </div>
 
   <script src="./script.js"></script>
+  <script src="./patch.js"></script>
 </body>
 </html>
